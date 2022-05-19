@@ -1,0 +1,492 @@
+
+<!-- HEADER -->
+<header class="header header-style-5 type-2 card-include" xmlns:th="http://www.thymeleaf.org" th:fragment="headershop">
+<div class="navigation flex-align">
+			<a th:href="@{/}" class="logo"><img th:src="@{~/img/final1.png}"  width="30%" height="10%"
+
+				class="logo-type-2"></a>
+			<div class="burger-menu">
+				<i></i>
+			</div>
+			<div class="nav">
+				<div class="nav-align-wrap">
+					<div class="right-block">
+						<div class="search">
+							<div class="search-popup">
+								<div class="container">
+									<div class="page-span-4 page-span"></div>
+									
+									
+								</div>
+							</div>
+							
+						</div>
+						<a href="#" class="like-item"> <svg version="1.1"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								viewBox="0 0 471.701 471.701"
+								style="enable-background: new 0 0 471.701 471.701;"
+								xml:space="preserve" width="16px" height="16px">
+                        <g>
+								<path
+									d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1
+                        c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3
+                        l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4
+                        C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3
+                        s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4
+                        c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3
+                        C444.801,187.101,434.001,213.101,414.401,232.701z"></path></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+								<g></g>
+                    </svg>
+						</a>
+						<div class="shop-card-item">
+                  <div class="shop-icon"> 
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129" width="16px" height="16px">
+                      <g><g><path d="m109.1,36.8c-0.3-2-2-3.4-4-3.4h-23v-9.4c0-9.7-7.9-17.6-17.6-17.6-9.7,0-17.6,7.9-17.6,17.6v9.4h-23c-2,0-3.7,1.4-4,3.4l-13.4,81c-0.2,1.2 0.1,2.4 0.9,3.3 0.8,0.9 1.9,1.4 3.1,1.4h108c0,0 0,0 0.1,0 2.3,0 4.1-1.8 4.1-4.1 0-0.5-0.1-0.9-0.2-1.3l-13.4-80.3zm-54-12.8c0-5.2 4.2-9.4 9.4-9.4s9.4,4.2 9.4,9.4v9.4h-18.8v-9.4zm-39.8,90.4l12.1-72.8h19.5v22.9c0,2.3 1.8,4.1 4.1,4.1 2.3,0 4.1-1.8 4.1-4.1v-22.9h18.8v22.9c0,2.3 1.8,4.1 4.1,4.1 2.3,0 4.1-1.8 4.1-4.1v-22.9h19.5l12.1,72.8h-98.4z"></path></g></g>
+                    </svg>
+                  <div class="shop-number" th:text="${session.mycartnum != null}? ${session.mycartnum}:'0'"></div>
+                   </div>  
+                   <span class="shop-card-price">Total: <b class="main-col" th:text="${session.mycarttotal!=null}? ${session.mycarttotal}+'$':'0'"></b></span>
+                   <div class="shop-card-list">
+                     <div class="shop-card-align-mobile">
+                       <div class="close-card-mobile main-fill-col">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 21.9 21.9" enable-background="new 0 0 21.9 21.9" width="18px" height="18px">
+                              <path d="M14.1,11.3c-0.2-0.2-0.2-0.5,0-0.7l7.5-7.5c0.2-0.2,0.3-0.5,0.3-0.7s-0.1-0.5-0.3-0.7l-1.4-1.4C20,0.1,19.7,0,19.5,0  c-0.3,0-0.5,0.1-0.7,0.3l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L3.1,0.3C2.9,0.1,2.6,0,2.4,0S1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.2,0,2.4  s0.1,0.5,0.3,0.7l7.5,7.5c0.2,0.2,0.2,0.5,0,0.7l-7.5,7.5C0.1,19,0,19.3,0,19.5s0.1,0.5,0.3,0.7l1.4,1.4c0.2,0.2,0.5,0.3,0.7,0.3  s0.5-0.1,0.7-0.3l7.5-7.5c0.2-0.2,0.5-0.2,0.7,0l7.5,7.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.4-1.4c0.2-0.2,0.3-0.5,0.3-0.7  s-0.1-0.5-0.3-0.7L14.1,11.3z" fill="#FFFFFF"></path>
+                            </svg>
+                       </div>  
+                       <ul>
+                       <th:block th:each="map : ${session.mycartitem}">
+                           <li class="flex-align">
+                               <div class="img hover-zoom">
+                                  <a th:href="@{'http://localhost:8080/shop/detailgame?id='+${map.value.games.idGame}}"><img style="width: 200px;height: 100px" th:src="@{'/getgameimage/'+${map.value.games.imageDatas[0].idImage}}" alt=""></a>
+                               </div>
+                                <div class="shop-counter">
+                                  
+                              </div>
+                               <h5 class="h5 caption"><a href="#" class="link-hover" th:text="${map.value.games.nameGame}"></a></h5>
+                               <div class="shop-counter">
+                                  
+                              </div>
+                              <div class="menu-price main-col" th:text="${map.value.games.priceFix}+'$'"></div>
+                               <div class="shop-counter">
+                                  
+                              </div>
+                           </li>
+                           </th:block>
+                       </ul>
+                       <div class="buy-bar">
+                           <div class="fl">
+                              <h4 class="h4 caption">Total:<b class="main-col" th:text="${session.mycarttotal!=null}? ${session.mycarttotal}+'$':'0$'"></b></h4>  
+                           </div>
+                           <div class="fr">
+                               <a th:href="@{/cart}" class="page-button button-style-1 type-2"><span class="txt">Go to the cart</span></a>
+                             
+                           </div>
+                       </div>
+                     </div>   
+                   </div>    
+                </div>
+
+
+						<div class="login-item">
+							<a href="#" class="open-popup" data-open="popup-login"
+								data-rel="3" th:if="${userInfo}==null" th:utext="'Login /'"></a>
+							<a th:href="@{/userinfo}" 
+								 th:unless="${userInfo}==null" th:utext=" ${userInfo}+'/'"></a>
+							<th:block th:if="${userInfo}">
+								<a th:href="@{/logout}" class="open-popup"
+									data-open="popup-logout" data-rel="5">Logout</a>
+							</th:block>
+							<th:block th:unless="${userInfo}">
+								<a href="#" class="open-popup" data-open="popup-register"
+									data-rel="4">Sign up</a>
+							</th:block>
+						</div>
+						
+
+
+
+					</div>
+					<nav>
+						<ul class="header-menu">
+                <li><a th:href="@{/}">Home<img src="img/down-arrow.png" alt="" class="menu-arr"></a>
+                       
+                    </li>
+                    <li>
+						<a href="#">Category</a>
+                            <ul style="height: 400px; overflow: auto;">
+								<li class="cate" th:each="category : ${listcate}" >
+									<a th:href="@{'/shop/categories/' + ${category.idCategory} + '/1'}" th:text="${category.nameCategory}"></a>
+								</li>
+                            </ul>
+					</li>
+                    <li class="active"><a th:href="@{/shop}">Shop<img src="img/down-arrow.png" alt="" class="menu-arr"></a>
+                       
+                    </li>
+                   
+                    <li><a th:href="@{/blog}">Blog<img src="img/down-arrow.png" alt="" class="menu-arr"></a>
+                    </li>
+                   
+                    </li>
+					
+                </ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		</header>
+		<!-- FOOTER -->
+		<footer class="footer footer-style-1 type-2 page-style-6" xmlns:th="http://www.thymeleaf.org" th:fragment="footer">
+		<div class="empty-sm-60 empty-xs-40"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="footer-item">
+						 <img th:src="@{~/img/final1.png}" height="40%" width="60%" alt="">
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<div class="simple-text">
+							<p>Play together, enjoy together, have fun together, that's the moment of life."‎ Live in your world, play in ours "‎. That is our concern for you.</p>
+						</div>
+						<div class="empty-sm-20 empty-xs-20"></div>
+						<ul class="list-style-2 ul-list">
+							<li><span>Address: </span>89 Tran Van Du, Tan Binh District, HCM City</li>
+							<li><span>Phone: </span><a href="tel:" class="link-hover">+84 28 3520 8135</a></li>
+							<li><span>Email: </span><a href="mailto:" class="link-hover">sonnh1404.98@gmail.com</a></li>
+						</ul>
+						<div class="empty-sm-30 empty-xs-30"></div>
+						
+						<div class="empty-sm-30 empty-xs-30"></div>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="footer-item">
+						<h5 class="h5">Menu categories</h5>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<ul class="list-style-3 ul-list">
+							<li><a th:href="@{/shop/categories/15/1}" class="link-hover">ACTION</a></li>
+							<li><a th:href="@{/shop/categories/14/1}" class="link-hover">ADVENTURE</a></li>
+							<li><a th:href="@{/shop/categories/10/1}" class="link-hover">ROLE PLAYING-RPG</a></li>
+							<li><a th:href="@{/shop/categories/8/1}" class="link-hover">HOROR</a></li>
+							<li><a th:href="@{/shop/categories/3/1}" class="link-hover">SPORT</a></li>
+							<li><a th:href="@{/shop/categories/2/1}" class="link-hover">RACING</a></li>
+							<li><a th:href="@{/shop/categories/16/1}" class="link-hover">ORTHER</a></li>
+						</ul>
+						<div class="empty-sm-30 empty-xs-30"></div>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="footer-item">
+						<h5 class="h5">quick links</h5>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<ul class="list-style-3 ul-list">
+							<li><a th:href="@{/}" class="link-hover">HOME</a></li>
+							
+							
+							<li><a th:href="@{/shop}"  class="link-hover"></a>SHOP</li>
+							<li><a th:href="@{/blog}"   class="link-hover">BLOG</a></li>
+							
+							<
+						</ul>
+						<div class="empty-sm-30 empty-xs-30"></div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="empty-sm-10 empty-xs-10"></div>
+		</div>
+		<div class="copyright text-center">
+			<div class="empty-sm-20 empty-xs-20"></div>
+			<div class="container">
+				<span>ï¿½ 2017 All Rights Reserved. Development by <a href="#">UnionAgency</a></span>
+			</div>
+			<div class="empty-sm-20 empty-xs-20"></div>
+		</div>
+	</footer>
+			<!-- POPUP REGISTER -->
+		<div class="popup index-popup-register" data-rel="4" xmlns:th="http://www.thymeleaf.org" th:fragment="popupRegister">
+		<div class="popup-wrap popup-layer">
+			<div class="empty-sm-0 empty-xs-15"></div>
+			<div class="container size-1">
+				<div class="popup-inner">
+					<div class="close-popup type-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+							viewBox="0 0 21.9 21.9" enable-background="new 0 0 21.9 21.9"
+							width="14px" height="14px">
+            <path
+								d="M14.1,11.3c-0.2-0.2-0.2-0.5,0-0.7l7.5-7.5c0.2-0.2,0.3-0.5,0.3-0.7s-0.1-0.5-0.3-0.7l-1.4-1.4C20,0.1,19.7,0,19.5,0  c-0.3,0-0.5,0.1-0.7,0.3l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L3.1,0.3C2.9,0.1,2.6,0,2.4,0S1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.2,0,2.4  s0.1,0.5,0.3,0.7l7.5,7.5c0.2,0.2,0.2,0.5,0,0.7l-7.5,7.5C0.1,19,0,19.3,0,19.5s0.1,0.5,0.3,0.7l1.4,1.4c0.2,0.2,0.5,0.3,0.7,0.3  s0.5-0.1,0.7-0.3l7.5-7.5c0.2-0.2,0.5-0.2,0.7,0l7.5,7.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.4-1.4c0.2-0.2,0.3-0.5,0.3-0.7  s-0.1-0.5-0.3-0.7L14.1,11.3z"
+								fill="#484848" />
+            </svg>
+					</div>
+					<div class="main-caption text-center color-type-2">
+						<h2 class="h2 tt">register</h2>
+							<h4 style="color: red;"  class="h4 tt" th:utext="${message2}"></h4>
+						<script type="text/javascript">
+							var input = document.querySelector('#input-message');
+							/* input.addEventListener('change', function(){
+								if(input.value){
+									document.body.classList.add('overflow');
+									var popup = document.querySelector('.popup');
+									console.log(popup)
+									popup.classList.add('active');
+								}
+							}); */
+							var message="[[${message2}]]";
+							if(message){
+								document.body.classList.add('overflow');
+								var popup = document.querySelector('.index-popup-register');
+								popup.classList.add('active');
+							}
+							</script>
+					</div>
+					<div class="empty-sm-30 empty-xs-30"></div>
+					<form th:action="@{/regis}" th:object="${user}" method="post">
+						<div class="input-field-wrap">
+							<input type="text" th:field="*{nameUsers}" class="input-field" placeholder="Your name"
+								>
+								
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<div class="input-field-wrap">
+							<input type="email" th:field="*{emailUsers}" class="input-field" placeholder="Your email"
+								 required="">
+								
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<div class="input-field-wrap">
+							<input type="text" th:field="*{usernameUsers}" class="input-field" placeholder="Your Username"
+								 required="required">
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<div class="input-field-wrap">
+							<input type="password" th:field="*{passwordUsers}" class="input-field"
+								placeholder="Enter password"  required="">
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<div class="input-field-wrap">
+							<input type="password" class="input-field"
+								placeholder="Repeat password" name="pre_password" required="">
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-20 empty-xs-20"></div>
+						<div class="checkbox-entry-wrap">
+							<label class="checkbox-entry color-2"> <input
+								type="checkbox" checked> <span> <i></i>
+									<p>Privacy police agreement</p>
+							</span>
+							</label>
+						</div>
+						<div class="empty-sm-30 empty-xs-20"></div>
+						<div class="text-center">
+							<div class="page-button button-style-1 type-2">
+								<input type="submit"> <span class="txt">register</span><i></i>
+							</div>
+						</div>
+					</form>
+					<div class="empty-sm-30 empty-xs-30"></div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- POPUP FORGOT -->
+	<div class="popup index-popup-forgot" data-rel="6" xmlns:th="http://www.thymeleaf.org" th:fragment="popupForgot">
+		<div class="popup-wrap popup-layer">
+			<div class="empty-sm-0 empty-xs-15"></div>
+			<div class="container size-1">
+				<div class="popup-inner">
+					<div class="close-popup type-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+							viewBox="0 0 21.9 21.9" enable-background="new 0 0 21.9 21.9"
+							width="14px" height="14px">
+            <path
+								d="M14.1,11.3c-0.2-0.2-0.2-0.5,0-0.7l7.5-7.5c0.2-0.2,0.3-0.5,0.3-0.7s-0.1-0.5-0.3-0.7l-1.4-1.4C20,0.1,19.7,0,19.5,0  c-0.3,0-0.5,0.1-0.7,0.3l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L3.1,0.3C2.9,0.1,2.6,0,2.4,0S1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.2,0,2.4  s0.1,0.5,0.3,0.7l7.5,7.5c0.2,0.2,0.2,0.5,0,0.7l-7.5,7.5C0.1,19,0,19.3,0,19.5s0.1,0.5,0.3,0.7l1.4,1.4c0.2,0.2,0.5,0.3,0.7,0.3  s0.5-0.1,0.7-0.3l7.5-7.5c0.2-0.2,0.5-0.2,0.7,0l7.5,7.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.4-1.4c0.2-0.2,0.3-0.5,0.3-0.7  s-0.1-0.5-0.3-0.7L14.1,11.3z"
+								fill="#484848" />
+            </svg>
+					</div>
+					<div class="empty-sm-30 empty-xs-20"></div>
+					<div class="main-caption text-center color-type-2">
+						<h2 class="h2 tt">Forgot Password</h2>
+						<h4 style="color: red;"  class="h4 tt" th:utext="${message3}"></h4>
+						<script type="text/javascript">
+							
+							/* input.addEventListener('change', function(){
+								if(input.value){
+									document.body.classList.add('overflow');
+									var popup = document.querySelector('.popup');
+									console.log(popup)
+									popup.classList.add('active');
+								}
+							}); */
+							var message="[[${message3}]]";
+							if(message){
+								document.body.classList.add('overflow');
+								var popup = document.querySelector('.index-popup-forgot');
+								popup.classList.add('active');
+							}
+							</script>
+					</div>
+					<div class="empty-sm-30 empty-xs-30"></div>
+					<form th:action="@{/forgot}" method="post" role="form" th:object="${user}" >
+						<div class="input-field-wrap">
+							<input type="text" class="input-field" placeholder="Your Email" th:field="*{emailUsers}"
+								>
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						
+						
+						<div class="simple-text xs reg-now fr">
+							
+							<a href="#" class="open-popup" data-open="popup-register"
+									data-rel="4"><p>Register now</p></a>
+							
+						</div>
+						<div class="empty-sm-30 empty-xs-20"></div>
+						<div class="text-center">
+							<div class="page-button button-style-1 type-2">
+								<button type="submit"> <span class="txt">Send</span><i></i></button>
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- POPUP Logout -->
+	<div class="popup index-popup-logout" data-rel="5" xmlns:th="http://www.thymeleaf.org" th:fragment="popupLogout" >
+		<div class="popup-wrap popup-layer">
+			<div class="empty-sm-0 empty-xs-15"></div>
+			<div class="container size-1">
+				<div class="popup-inner">
+					<div class="close-popup type-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+							viewBox="0 0 21.9 21.9" enable-background="new 0 0 21.9 21.9"
+							width="14px" height="14px">
+            <path
+								d="M14.1,11.3c-0.2-0.2-0.2-0.5,0-0.7l7.5-7.5c0.2-0.2,0.3-0.5,0.3-0.7s-0.1-0.5-0.3-0.7l-1.4-1.4C20,0.1,19.7,0,19.5,0  c-0.3,0-0.5,0.1-0.7,0.3l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L3.1,0.3C2.9,0.1,2.6,0,2.4,0S1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.2,0,2.4  s0.1,0.5,0.3,0.7l7.5,7.5c0.2,0.2,0.2,0.5,0,0.7l-7.5,7.5C0.1,19,0,19.3,0,19.5s0.1,0.5,0.3,0.7l1.4,1.4c0.2,0.2,0.5,0.3,0.7,0.3  s0.5-0.1,0.7-0.3l7.5-7.5c0.2-0.2,0.5-0.2,0.7,0l7.5,7.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.4-1.4c0.2-0.2,0.3-0.5,0.3-0.7  s-0.1-0.5-0.3-0.7L14.1,11.3z"
+								fill="#484848" />
+            </svg>
+					</div>
+					<div class="empty-sm-30 empty-xs-20"></div>
+					<div class="main-caption text-center color-type-2">
+						<h2 class="h2 tt">Logout</h2>
+					</div>
+					<div class="empty-sm-30 empty-xs-30"></div>
+					<form th:action="@{/logout}" method="POST" role="form">
+						<div class="text-center">
+							<div class="page-button button-style-1 type-2">
+								<input type="submit"> <span class="txt">Logout</span><i></i>
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- POPUP LOGIN -->
+	<div class="popup index-popup-login" data-rel="3" xmlns:th="http://www.thymeleaf.org" th:fragment="popupLogin">
+		<div class="popup-wrap popup-layer">
+			<div class="empty-sm-0 empty-xs-15"></div>
+			<div class="container size-1">
+				<div class="popup-inner">
+					<div class="close-popup type-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+							viewBox="0 0 21.9 21.9" enable-background="new 0 0 21.9 21.9"
+							width="14px" height="14px">
+            <path
+								d="M14.1,11.3c-0.2-0.2-0.2-0.5,0-0.7l7.5-7.5c0.2-0.2,0.3-0.5,0.3-0.7s-0.1-0.5-0.3-0.7l-1.4-1.4C20,0.1,19.7,0,19.5,0  c-0.3,0-0.5,0.1-0.7,0.3l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L3.1,0.3C2.9,0.1,2.6,0,2.4,0S1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.2,0,2.4  s0.1,0.5,0.3,0.7l7.5,7.5c0.2,0.2,0.2,0.5,0,0.7l-7.5,7.5C0.1,19,0,19.3,0,19.5s0.1,0.5,0.3,0.7l1.4,1.4c0.2,0.2,0.5,0.3,0.7,0.3  s0.5-0.1,0.7-0.3l7.5-7.5c0.2-0.2,0.5-0.2,0.7,0l7.5,7.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.4-1.4c0.2-0.2,0.3-0.5,0.3-0.7  s-0.1-0.5-0.3-0.7L14.1,11.3z"
+								fill="#484848" />
+            </svg>
+					</div>
+					<div class="main-caption text-center color-type-2">
+						<h2 class="h2 tt">log in</h2>
+						<h4 style="color: red;"  class="h4 tt" th:utext="${message}"></h4>
+						<script type="text/javascript">
+							var input = document.querySelector('#input-message');
+							/* input.addEventListener('change', function(){
+								if(input.value){
+									document.body.classList.add('overflow');
+									var popup = document.querySelector('.popup');
+									console.log(popup)
+									popup.classList.add('active');
+								}
+							}); */
+							var message="[[${message}]]";
+							if(message){
+								document.body.classList.add('overflow');
+								var popup = document.querySelector('.index-popup-login');
+								popup.classList.add('active');
+							}
+						</script>
+						<!-- <h4  class="h4 tt" th:text="${message}"></h4> -->
+					</div>
+					<div class="empty-sm-30 empty-xs-30"></div>
+					<div class="empty-sm-30 empty-xs-30"></div>
+					<form th:action="@{/login}" method="POST" role="form" >
+						<div class="input-field-wrap">
+							<input type="text" class="input-field" placeholder="Your Username"
+								name="usernameUsers">
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-15 empty-xs-15"></div>
+						<div class="input-field-wrap">
+							<input type="password" class="input-field"
+								placeholder="Enter password" name="passwordUsers">
+							<div class="focus"></div>
+						</div>
+						<div class="empty-sm-20 empty-xs-20"></div>
+						<div class="simple-text xs forgot fl color-3">
+							
+							<a href="#" class="open-popup" data-open="popup-forgot"
+									data-rel="6"><p>Forgot password</p></a>
+						</div>
+						<div class="simple-text xs reg-now fr">
+							<a href="#" class="open-popup" data-open="popup-register"
+									data-rel="4"><p>Register now</p></a>
+						</div>
+						<div class="empty-sm-30 empty-xs-20"></div>
+						<div class="text-center">
+							<div class="page-button button-style-1 type-2">
+								<button onchange="myFunction()" type="submit"> <span class="txt">Login</span><i></i></button>
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
+							</div>
+						</div>
+					</form>
+					<div class="empty-sm-30 empty-xs-30"></div>
+
+ 
+
+				</div>
+			</div>
+		</div>
+	</div>
